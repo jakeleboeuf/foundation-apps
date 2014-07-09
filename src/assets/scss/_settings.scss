@@ -44,3 +44,13 @@ $line-height: 1.3;
 $group-width: 62.5rem;
 $block-gutter: 1.875rem;
 $total-columns: 12;
+
+$body-font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+
+$global-radius: rem-calc(3);
+$global-rounded: 1000px;
+$cursor-pointer-value: pointer !default;
+
+// DIRECTIONS
+$default-dir: left;
+$opposite-dir: right;
