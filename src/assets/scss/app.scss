@@ -1,20 +1,29 @@
-@import "normalize";
+// FONTS
+@import "fonts/open-iconic";
 
-@import
-	"settings";
+// CUSTOMIZE FOUNDATION
+@import "settings";	
 
-/*COMPONENTS*/
-@import
-	"f6a/functions",
-	"f6a/global",
-	"f6a/influence",
-	"f6a/lists",
-	"f6a/motion",
-	"f6a/typography",
-	"f6a/forms",
-	"f6a/grid",
-	"f6a/utilities",
-	"f6a/buttons"; 
+// FOUNDATION
+@import "foundation-6-alpha/foundation-6-alpha";
+
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+// @mixin visually-hidden { 
+//   border: 0; 
+//   clip: rect(0 0 0 0); 
+//   height: 1px; 
+//   margin: -1px; 
+//   overflow: hidden; 
+//   padding: 0; 
+//   position: absolute; 
+//   width: 1px; 
+// }
+
+@import 
+	"pages/docs",
+	"pages/influence";
+
 
 .panel {
 	background: #eee;  
@@ -49,3 +58,12 @@ nav {
 
 // Comment or uncomment out this line for debugging.
 // @include debug;
+
+.button [class*="fi-"] { 
+	position: relative;
+	top:2px;
+}
+#img-1, #img-2 {
+	// position: absolute;
+}
+#img-1 { z-index:1;}

@@ -1,0 +1,98 @@
+[class*="fixed-"] {
+	h1,h2,h3,h4,h5,h6 { margin:0; }
+}
+
+.corner.button {
+	margin: 0;
+	[class*="fi-"] { position: relative; top: 2px; }
+	position: absolute;
+	bottom:0;
+	animation-duration: 3s;
+	z-index: 10;
+}
+
+.fixed-bot-left {
+	width: 50%;
+	height: 50%;
+	left: 40px;
+	bottom: 40px;
+	position: fixed;
+	z-index: 20;
+}
+
+.pip {
+	@extend %animation-base;
+	width: 275px;
+	// height: 150px;
+	background: rgba(darken($dark-color, 20%), 0.7);
+	padding: $global-spacing;
+	position: absolute;
+	bottom: 45px;
+	border-radius: $global-radius;
+	color: $secondary-color;
+	-webkit-backface-visibility: hidden;
+	z-index: 1;
+	&.animate-out {
+		animation: slide-out-to-south 700ms ease;
+		animation-fill-mode: forwards;
+		z-index:0;
+	}
+
+	p {
+		font-size: rem-calc(14);
+		margin-bottom: 0;
+	}
+	&::after {
+		@include css-triangle(8px, rgba(darken($dark-color, 20%), 0.7), top);
+		position: absolute;
+		content: "";
+		bottom: -16px;
+		left: 18px;
+		-webkit-backface-visibility: hidden;
+	}
+
+}
+
+header.fixed-top {
+	box-shadow: 0 2px 2px 0 rgba(black, 0.05);
+	background: $dark-color;
+	.button { margin:0;}
+	.toolbar { 
+		background: lighten($dark-color, 20%);
+	} 
+}
+
+// Comment or uncomment out this line for debugging.
+// @include debug;
+
+.button [class*="fi-"] { 
+	position: relative;
+	top:2px;
+}
+.img-contain { position: relative;}
+
+#img-1 { z-index:1;}
+
+.img-frame {
+	position: absolute;
+	height: calc(100% - 2rem);
+	top: 1rem;
+	left: 1rem;
+	right: 1rem;
+	overflow:auto;
+	overflow: visible;
+	text-align: center;
+	img {
+		position: static;
+		max-height: 100%;
+		display: block;
+		margin: 0 auto;
+		box-shadow: 0 0 3px 0 rgba(black, 0.5);
+	}
+
+}
+
+.lightbox {
+	background: $dark-color;
+}
+

@@ -67,7 +67,6 @@ module.exports = function(grunt) {
         },
         files: {
           'dist/assets/css/src/app.css': 'src/assets/scss/app.scss',
-          'dist/assets/css/src/docs.css': 'src/assets/scss/docs.scss'
         }        
       }
     },

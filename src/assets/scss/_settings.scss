@@ -10,7 +10,7 @@ $cinnabar: #F04124;
 $cornflower: #A0D3E8; 				
 $sea-green: #43AC6A;		
 $carrot: #F08A24;
-$slate: #708090; 		
+$slate: #2B303B; 		
 
 // ZURBapp Colors
 $dull-cyan: #3CADBF; // Influence
@@ -19,7 +19,7 @@ $debian-red: #C9025C; // Solidify
 $summer-heat: #FFB134; // Notable 
 
 // Application Colors
-$primary-color: $bondi-blue;
+$primary-color: $dull-cyan;
 $secondary-color: $white-lilac;
 $alert-color: $cinnabar;
 $info-color: $cornflower;
@@ -27,30 +27,11 @@ $success-color: $sea-green;
 $warning-color: $carrot;
 $dark-color: $slate;
 
-$base-color: $primary-color;
-$light-color: lighten($base-color, 15%);
-
-
-$dark-secondary-color: darken($secondary-color, 15%);
-$light-secondary-color: lighten($secondary-color, 15%);
-
-// Typography
-
-$base-font-size: 16px;
-$line-height: 1.3;
+$dark-secondary-color: scale-color($secondary-color, $lightness: 80%);
+$light-secondary-color: scale-color($secondary-color, $lightness: -20%);
 
 // Grid
-
-$group-width: 62.5rem;
-$block-gutter: 1.875rem;
-$total-columns: 12;
-
-$body-font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
-
-$global-radius: rem-calc(3);
-$global-rounded: 1000px;
-$cursor-pointer-value: pointer !default;
-
-// DIRECTIONS
-$default-dir: left;
-$opposite-dir: right;
+$fixed-top: 7.5rem;
+// $fixed-bottom: 80px;
+// $fixed-left: false;
+// $fixed-right: false;

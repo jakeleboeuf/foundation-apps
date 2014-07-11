@@ -1,20 +1,72 @@
-<style type="text/css">
-  * { background: rgba(0,0,0,0.05); }
-</style>
-
 <div class="frame stack">
 	
-  <header class="fixed-top block">
+  <!-- HEADER -->
+  <header class="group fixed-top stack">
 		
-    <div class="group stack">
-      <div class="group small-6">
+      <div class="block small-5">
         <h5>Creative Direction <small>Mood Boards</small></h5>
       </div>
-      <div class="group small-6">
-        
+      <div class="group small-7 toolbar">
+
+        <div class="block small-6 ">
+
+          <div class="button-bar">
+            <ul class="button-group radius">
+              <li><a href="" class="small button">Done</a></li>
+            </ul>
+            <ul class="button-group radius">
+              <li><a href="" class="small button"><i class="fi-arrow-thick-left"></i></a></li>
+              <li><a href="" class="small button"><i id="next-right" class="fi-arrow-thick-right"></i></a></li>
+            </ul>
+            <ul class="button-group radius">
+              <li><a href="" class="small button"><i class="fi-grid-three-up"></i></a></li>
+            </ul>
+            <ul class="button-group radius">
+              <li><a href="" class="small button"><i class="fi-zoom-in"></i></a></li>
+              <li><a href="" class="small button"><i class="fi-zoom-out"></i></a></li>
+            </ul>
+          </div>
+
+        </div>
+        <div class="block small-3 "></div>
+        <div class="block small-3">
+          
+          <div class="radius range-slider" data-slider>
+            <span class="range-slider-handle"></span>
+            <span class="range-slider-active-segment"></span>
+            <input type="hidden">
+          </div>
+          
+
+        </div>
+
       </div>
-    </div>
 
 	</header>
-	
+  <!-- /HEADER -->
+
+  <div class="remainder lightbox group scrollable-stack">
+    <div class="block">
+      <div id="img-1" class="img-frame" data-animate="slide-out-to-west">
+        <img src="{{assets}}/img/perfume.jpg" class=""  alt="">
+      </div>
+      <div id="img-2" class="img-frame" data-animate="slide-in-from-east">
+        <img src="{{assets}}/img/kara.jpg" class=""  alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-bot-left">
+     
+    <a href="#" class="animated small radius corner button" data-animate="wiggle infinite ease-in-out">
+      <i class="fi-info"></i>
+    </a>
+    <div class="pip animate-out" data-animate="slide-in-from-south-subtle">
+      <p>Perfume is a Japanese pop girl group from Hiroshima, Japan, consisting of Ayano Ōmoto, Yuka Kashino, and Ayaka Nishiwaki. The group has been signed with Universal Music Japan since 2012.</p>
+    </div>
+
+  </div>
+
+      
+
 </div>

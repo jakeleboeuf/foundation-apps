@@ -12,3 +12,14 @@ function addClass(id,new_class){
 
  return n;
 }
+
+$('.corner.button').on('click', function(e){
+  e.preventDefault();
+	$(this).toggleClass('animated');
+  $('.pip').toggleClass('animated animate-out');
+});
+
+$('#next-right').on('click', function(e){
+  e.preventDefault();
+  $('#img-1, #img-2').toggleClass('animated');
+});

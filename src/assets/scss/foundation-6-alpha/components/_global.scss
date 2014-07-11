@@ -243,11 +243,11 @@ $text-direction: ltr !default;
 $default-float: left !default;
 $opposite-direction: right !default;
 @if $text-direction == ltr {
-  $default-float: left;
-  $opposite-direction: right;
+  $default-dir: left;
+  $opposite-dir: right;
 } @else {
-  $default-float: right;
-  $opposite-direction: left;
+  $default-dir: right;
+  $opposite-dir: left;
 }
 // We use these as default colors throughout
 $bondi-blue: #008CBA;     
@@ -270,6 +270,9 @@ $dark-color: $slate !default;
 // We use these to make sure border radius matches unless we want it different.
 $global-radius: 3px !default;
 $global-rounded: 1000px !default;
+
+// We use this for default spacing
+$global-spacing: rem-calc(15);
 
 // We use these to control inset shadow shiny edges and depressions.
 $shiny-edge-size: 0 1px 0 !default;
@@ -454,19 +457,9 @@ $cursor-text-value: text !default;
 }
 
 html,
-body { font-size: $base-font-size; }
-
-// Default body styles
-body {
-  background: #fff;
-  color: #141414;
-  padding: 0;
-  margin: 0;
-  font-family: "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  line-height: $line-height; // Set to $base-line-height to take on browser default of 150%
-  position: relative;
+body { 
+  font-size: $base-font-size; 
+  -webkit-font-smoothing: antialiased;
 }
 
 img { max-width: 100%; display: block; }

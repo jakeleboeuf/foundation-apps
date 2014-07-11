@@ -5,6 +5,10 @@ $fixed-bottom: 80px !default;
 $fixed-left: false !default;
 $fixed-right: false !default;
 
+$group-width: 62.5rem !default;
+$block-gutter: 1.875rem !default;
+$total-columns: 12 !default;
+
 
 .frame {
 	margin: 0;
@@ -247,3 +251,9 @@ $fixed-right: false !default;
 }
 
 img { max-width: 100%; }
+
+.block, .group {
+	&.unflex {
+		flex-basis: 0; 
+	}
+}
