@@ -1,7 +1,7 @@
 // Grid Variables
 
 $fixed-top: 80px !default;
-$fixed-bottom: 80px !default;
+$fixed-bottom: false !default;
 $fixed-left: false !default;
 $fixed-right: false !default;
 
@@ -15,6 +15,7 @@ $total-columns: 12 !default;
 	height: 100vh;
 	display: flex;
 	flex-flow: row nowrap; 
+	overflow: hidden;
 
 	&.stack, &.small-stack { 
 		flex-flow: column nowrap; 
@@ -69,6 +70,10 @@ $total-columns: 12 !default;
 
 	// border: 1px solid #eee;
 	overflow: hidden;
+
+	&.allow-overflow {
+		overflow: visible;
+	}
 
 	@for $i from 0 through $total-columns {
 	  &.small-#{$i} {
@@ -209,7 +214,7 @@ $total-columns: 12 !default;
 
 // Fixed size top / bottom and left / right
 
-.stack, .small-stack, .medium-stack, .large-stack {
+.modal, .stack, .small-stack, .medium-stack, .large-stack {
 
 	.group, .block {
 		&[class*="fixed-"] { flex: 0 0 auto; }

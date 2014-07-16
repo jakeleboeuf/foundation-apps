@@ -16,10 +16,10 @@ $slate: #2B303B;
 $dull-cyan: #3CADBF; // Influence
 $inch-worm: #B8D30B; // Verify
 $debian-red: #C9025C; // Solidify
-$summer-heat: #FFB134; // Notable 
+$butternut: #FFB134; // Notable 
 
 // Application Colors
-$primary-color: $dull-cyan;
+$primary-color: $debian-red;
 $secondary-color: $white-lilac;
 $alert-color: $cinnabar;
 $info-color: $cornflower;
@@ -31,7 +31,7 @@ $dark-secondary-color: scale-color($secondary-color, $lightness: 80%);
 $light-secondary-color: scale-color($secondary-color, $lightness: -20%);
 
 // Grid
-$fixed-top: 7.5rem;
-// $fixed-bottom: 80px;
+$fixed-top: 4.5rem;
+// $fixed-bottom: 5.5rem;
 // $fixed-left: false;
 // $fixed-right: false;

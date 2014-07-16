@@ -121,7 +121,7 @@ module.exports = function(grunt) {
 
       assemble_pages: {
         files: ['src/pages/**/*.html'],
-        tasks: ['newer:assemble'],
+        tasks: ['assemble'],
         options: {livereload:true}
       }
     }
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-newer');
+  // grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('build', ['clean','sass', 'autoprefixer','uglify','assemble','copy']);

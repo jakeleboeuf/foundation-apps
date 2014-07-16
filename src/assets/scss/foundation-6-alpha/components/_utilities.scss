@@ -23,6 +23,15 @@
 	}
 }
 
+.h-aligner {
+	margin: 0 auto;
+	display: block;
+}
+
+.fit-to-content {
+	overflow-y: auto;
+}
+
 // Horizontal float utility classes
 
 .left { float: left; }

@@ -5,8 +5,6 @@
 .corner.button {
 	margin: 0;
 	[class*="fi-"] { position: relative; top: 2px; }
-	position: absolute;
-	bottom:0;
 	animation-duration: 3s;
 	z-index: 10;
 }
@@ -28,10 +26,20 @@
 	padding: $global-spacing;
 	position: absolute;
 	bottom: 45px;
+	left:0;
 	border-radius: $global-radius;
 	color: $secondary-color;
 	-webkit-backface-visibility: hidden;
+	text-align: left;
 	z-index: 1;
+	&::after {
+		@include css-triangle(8px, rgba(darken($dark-color, 20%), 0.7), top);
+		position: absolute;
+		content: "";
+		bottom: -16px;
+		left: 18px;
+		-webkit-backface-visibility: hidden;
+	}
 	&.animate-out {
 		animation: slide-out-to-south 700ms ease;
 		animation-fill-mode: forwards;
@@ -42,14 +50,6 @@
 		font-size: rem-calc(14);
 		margin-bottom: 0;
 	}
-	&::after {
-		@include css-triangle(8px, rgba(darken($dark-color, 20%), 0.7), top);
-		position: absolute;
-		content: "";
-		bottom: -16px;
-		left: 18px;
-		-webkit-backface-visibility: hidden;
-	}
 
 }
 
@@ -57,10 +57,12 @@ header.fixed-top {
 	box-shadow: 0 2px 2px 0 rgba(black, 0.05);
 	background: $dark-color;
 	.button { margin:0;}
+
+}
 	.toolbar { 
 		background: lighten($dark-color, 20%);
+		.button { margin: 0; }
 	} 
-}
 
 // Comment or uncomment out this line for debugging.
 // @include debug;
@@ -72,6 +74,7 @@ header.fixed-top {
 .img-contain { position: relative;}
 
 #img-1 { z-index:1;}
+#img-2 { opacity: 0;}
 
 .img-frame {
 	position: absolute;
@@ -92,7 +95,82 @@ header.fixed-top {
 
 }
 
+.remainder.modal {
+	transition: opacity 700ms ease, transform 700ms ease;
+	backface-visibility: hidden;
+	background: rgba($white-lilac, 1);
+	display: block;
+	top:0;
+	width: 100%;
+	height: calc(100vh - #{$fixed-bottom});
+	position: absolute;
+	z-index: 1;
+	transform: translateY(100%);
+	opacity: 0;
+	position: absolute;
+	&.animated {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .lightbox {
 	background: $dark-color;
 }
 
+footer {
+	z-index: 2;
+	position: relative;
+	box-shadow: 0 -3px 10px 0 rgba(black, 0.1);
+}
+
+.images {
+	img { 
+		max-height: 90%; 
+		display: block;
+		margin: 0 auto;
+		transition: transform 300ms ease, box-shadow 300ms ease;
+		transform: scale(1);
+		backface-visibility: hidden;
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: 0 0 3px 0 rgba(black, .3);
+		}
+	}
+	a { 
+		position: relative;
+	}
+	.img-tip {
+		transition: transform 700ms ease, opacity 700ms ease; 
+		position: absolute;
+		bottom: -15px;
+		left: 0;
+		right: 0;
+		text-align: center;
+		z-index: 10;
+		transform: translateY(-20%);
+		opacity: 0;
+
+		.content {
+			background: rgba(darken($dark-color, 20%), 0.7);
+			display: inline-block;
+			padding: 0.5rem;
+			border-radius: $global-radius;
+			color: $secondary-color; 
+
+			&::after {
+				@include css-triangle(8px, rgba(darken($dark-color, 20%), 0.7), bottom);
+				position: absolute;
+				content: "";
+				top: -16px;
+				left: 50%;
+				margin-left: -8px;
+				-webkit-backface-visibility: hidden;
+			}
+		}
+	}
+	a:hover + .img-tip { 
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
