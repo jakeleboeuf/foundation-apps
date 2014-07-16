@@ -15,11 +15,22 @@ function addClass(id,new_class){
 
 $('.corner.button').on('click', function(e){
   e.preventDefault();
-	$(this).toggleClass('animated');
+  $(this).toggleClass('animated');
   $('.pip').toggleClass('animated animate-out');
 });
 
 $('#next-right').on('click', function(e){
   e.preventDefault();
   $('#img-1, #img-2').toggleClass('animated');
+});
+
+$('.all.button').on('click', function(e){
+  e.preventDefault();
+  $('#all-images').toggleClass('animated');
+  $('.lightbox').toggleClass('blurry');
+});
+
+$('.solidify-image').on('click', function(e){
+  e.preventDefault();
+  $('.half.modal').toggleClass('animated');
 });
